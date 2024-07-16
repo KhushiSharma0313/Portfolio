@@ -1,4 +1,4 @@
-/* General Reset and Setup */
+/* Reset and General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
@@ -16,14 +16,8 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
+    padding: 10px 0;
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul {
@@ -33,124 +27,177 @@ header nav ul {
 }
 
 header nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #ffc107;
-}
-
-/* Main Sections */
-section {
-    padding: 4rem 0;
-    background-color: #fff;
+    font-size: 18px;
+    transition: all 0.3s ease;
     position: relative;
 }
 
-section h1,
-section h2,
-section h3 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+header nav ul li a:hover {
+    color: #FF5733;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FF5733;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+}
+
+h1, h2, h3 {
     color: #333;
 }
 
-section p {
-    text-align: center;
-    margin-bottom: 1.5rem;
+p {
     color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #FF5733;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* About Section */
 .profile-pic {
-    display: block;
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* Experience Section */
-.experience-container {
+.experience-timeline {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
-.experience-card {
-    background-color: #fff;
-    padding: 2rem;
-    margin: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 2rem);
-    max-width: 600px;
-    transition: transform 0.3s ease;
+.experience-item {
+    margin-bottom: 30px;
+    position: relative;
 }
 
-.experience-card:hover {
-    transform: translateY(-10px);
-}
-
-.experience-card img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto 1rem;
+.experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 22px;
+    width: 10px;
+    height: 10px;
+    background-color: #FF5733;
     border-radius: 50%;
-    object-fit: cover;
+    transform: translateX(-50%);
 }
 
-.experience-info h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+.experience-content {
+    margin-left: 50px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.experience-content h3 {
+    margin-bottom: 5px;
+    color: #FF5733;
+}
+
+.experience-content p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Skills Section */
+.skill-bar {
+    margin-bottom: 20px;
+}
+
+.skill-bar-title {
+    margin-bottom: 5px;
     color: #333;
 }
 
-.experience-info p {
-    color: #666;
+.skill-bar-progress {
+    height: 10px;
+    background-color: #FF5733;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
 }
 
-.experience-info ul {
-    margin-top: 1rem;
-    color: #666;
+.skill-bar-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f9f9f9;
+    z-index: 1;
 }
 
-.experience-info ul li {
-    margin-bottom: 0.5rem;
+.skill-bar-progress span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%;
+    background-color: #FFC300;
+    transition: width 1s ease;
 }
 
 /* Projects Section */
 .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .project-card {
     background-color: #fff;
-    padding: 2rem;
-    margin: 1rem;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 2rem);
-    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 .project-card:hover {
@@ -158,111 +205,95 @@ section p {
 }
 
 .project-card img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto 1rem;
-    border-radius: 5px;
-    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .project-info h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: #333;
+    margin-bottom: 10px;
+    color: #FF5733;
 }
 
-.project-info a {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
-}
-
-.project-info a:hover {
-    color: #ffc107;
-}
-
-/* Contact Section */
-.contact-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.contact-info {
-    max-width: 300px;
-}
-
-.contact-details {
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
+.project-info p {
+    margin-bottom: 5px;
     color: #666;
 }
 
-.contact-details img {
-    width: 30px;
+.project-info a {
+    color: #FF5733;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    padding-left: 20px;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info ul li i {
     margin-right: 10px;
-    vertical-align: middle;
+    color: #FF5733;
+    font-size: 20px;
 }
 
 .contact-form {
-    max-width: 600px;
-}
-
-.contact-form form {
-    display: grid;
-    grid-gap: 1rem;
-}
-
-.contact-form label {
-    font-weight: bold;
-    color: #333;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #ffc107;
-}
-
-.contact-form textarea {
-    resize: vertical;
+    font-size: 16px;
 }
 
 .contact-form button {
     width: 100%;
-    padding: 0.75rem;
-    background-color: #333;
-    color: #fff;
+    padding: 10px;
     border: none;
     border-radius: 5px;
+    background-color: #FF5733;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #555;
+    background-color: #FFC300;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: #fff;
-    position: relative;
-    z-index: 1000;
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
