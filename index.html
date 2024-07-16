@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khushi Sharma's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .pie-chart {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,10 +37,9 @@
 
     <section id="experience">
         <h2>Experience</h2>
-        <div class="experience-container">
-            <div class="experience-card">
-                <img src="experience.png" alt="Experience">
-                <div class="experience-info">
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-content">
                     <h3>Web/App Design Intern</h3>
                     <p>iDayDreamStudios</p>
                     <p>June 2024 – Present</p>
@@ -44,9 +50,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="experience-card">
-                <img src="experience.png" alt="Experience">
-                <div class="experience-info">
+            <div class="experience-item">
+                <div class="experience-content">
                     <h3>Data Analyst Research Assistant</h3>
                     <p>University of Wisconsin Milwaukee</p>
                     <p>Jan 2024 – Present</p>
@@ -57,9 +62,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="experience-card">
-                <img src="experience.png" alt="Experience">
-                <div class="experience-info">
+            <div class="experience-item">
+                <div class="experience-content">
                     <h3>Software Developer Intern</h3>
                     <p>Yashika Skills Development Company</p>
                     <p>Jan 2023 – July 2023</p>
@@ -70,9 +74,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="experience-card">
-                <img src="experience.png" alt="Experience">
-                <div class="experience-info">
+            <div class="experience-item">
+                <div class="experience-content">
                     <h3>Software Engineer Intern</h3>
                     <p>Google Development Club</p>
                     <p>June 2022 – Dec 2022</p>
@@ -86,9 +89,14 @@
         </div>
     </section>
 
+    <section id="skills">
+        <h2>Skills</h2>
+        <canvas id="skillsChart" class="pie-chart"></canvas>
+    </section>
+
     <section id="projects">
         <h2>Projects</h2>
-        
+        <div class="projects-container">
             <div class="project-card">
                 <img src="Chatbot.jpg" alt="Chat Bot">
                 <div class="project-info">
@@ -97,7 +105,7 @@
                 </div>
             </div>
             <div class="project-card">
-               <img alt="image" src="https://github.com/KhushiSharma0313/To-do-list/assets/115573980/039ddc68-e9d2-4369-9e46-9c7376bbae0b">
+                <img alt="To-do List" src="https://github.com/KhushiSharma0313/To-do-list/assets/115573980/039ddc68-e9d2-4369-9e46-9c7376bbae0b">
                 <div class="project-info">
                     <h3>To-do List</h3>
                     <a href="https://github.com/KhushiSharma0313/To-do-list" target="_blank">View on GitHub</a>
@@ -111,30 +119,28 @@
                 </div>
             </div>
             <div class="project-card">
-               <img alt="Screenshot 2024-03-23 205642" src="https://github.com/KhushiSharma0313/Wordoit/assets/115573980/9ecc590e-5a70-48ad-a1bd-5f4cd30402fc">
+                <img alt="Rich text editor" src="https://github.com/KhushiSharma0313/Wordoit/assets/115573980/9ecc590e-5a70-48ad-a1bd-5f4cd30402fc">
                 <div class="project-info">
                     <h3>Rich text editor</h3>
                     <a href="https://github.com/KhushiSharma0313/Wordoit" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img alt="Screenshot 2024-03-17 145415" src="https://github.com/KhushiSharma0313/piVisualize/assets/115573980/d3a01edd-d2cc-4494-b0f5-7c96e2c96f51">
+                <img alt="piVisualize" src="https://github.com/KhushiSharma0313/piVisualize/assets/115573980/d3a01edd-d2cc-4494-b0f5-7c96e2c96f51">
                 <div class="project-info">
                     <h3>piVisualize</h3>
                     <a href="https://github.com/KhushiSharma0313/piVisualize" target="_blank">View on GitHub</a>
                 </div>
             </div>
-        <div class="projects-container">
             <div class="project-card">
-                <img src="https://github.com/KhushiSharma0313/Random-background-color-changer/assets/115573980/a1ced7ac-3d9b-4ecd-8be5-828f98e3c888" alt="Random Background Color Changer">
+                <img alt="Random Background Color Changer" src="https://github.com/KhushiSharma0313/Random-background-color-changer/assets/115573980/a1ced7ac-3d9b-4ecd-8be5-828f98e3c888">
                 <div class="project-info">
                     <h3>Random Background Color Changer</h3>
                     <a href="https://github.com/KhushiSharma0313/Random-background-color-changer" target="_blank">View on GitHub</a>
                 </div>
             </div>
-            
             <div class="project-card">
-                <img src="https://github.com/KhushiSharma0313/Portfolio/blob/main/tinyFileSystem.jpg" alt="Tiny File System">
+                <img alt="Tiny File System" src="Portfolio/assets/tinyFileSystem.jpg">
                 <div class="project-info">
                     <h3>Tiny File System</h3>
                     <a href="tinyFileSystem.jpg" target="_blank">View on GitHub</a>
@@ -146,19 +152,12 @@
                     <h3>Blackjack</h3>
                     <a href="https://github.com/KhushiSharma0313/Blackjack" target="_blank">View on GitHub</a>
                 </div>
-            
+            </div>
             <div class="project-card">
                 <img src="netflix-users.png" alt="Netflix Dashboard">
                 <div class="project-info">
                     <h3>Netflix Dashboard</h3>
-                    <a href="https://public.tableau.com/app/profile/khushi.sharma8816/viz/Netflixdashboard_17076037075770/Netflix" target="_blank">View on Tableau</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="covid-19-tracker.png" alt="Covid-19 Tracker">
-                <div class="project-info">
-                    <h3>Covid-19 Tracker</h3>
-                    <a href="https://public.tableau.com/app/profile/khushi.sharma8816/viz/Covid19tracker_17075635482510/COVID19Tracker" target="_blank">View on Tableau</a>
+                    <a href="https://public.tableau.com/en-us/gallery/superstore-dashboard" target="_blank">View on GitHub</a>
                 </div>
             </div>
         </div>
@@ -166,48 +165,55 @@
 
     <section id="contact">
         <h2>Contact</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-details">
-                    <img src="email.png" alt="Email" class="icon">
-                    <h3>Email</h3>
-                    <p>sharmakhushi0313@outlook.com</p>
-                </div>
-                <div class="contact-details">
-                    <img src="github.png" alt="GitHub" class="icon">
-                    <h3>GitHub</h3>
-                    <p><a href="https://github.com/KhushiSharma0313" target="_blank">github.com/KhushiSharma0313</a></p>
-                </div>
-                <div class="contact-details">
-                    <img src="linkedin.png" alt="LinkedIn" class="icon">
-                    <h3>LinkedIn</h3>
-                    <p><a href="https://www.linkedin.com/in/khushi-sharma0313/" target="_blank">linkedin.com/in/khushi-sharma0313</a></p>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h3>Get in Touch</h3>
-                <form action="https://formspree.io/f/yourformid" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
+        <p>Reach out to me through the following channels:</p>
+        <ul>
+            <li>Email: <a href="mailto:sharmakhushi0313@outlook.com">sharmakhushi0313@outlook.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/khushi-sharma0313/" target="_blank">Khushi Sharma</a></li>
+            <li>GitHub: <a href="https://github.com/KhushiSharma0313" target="_blank">KhushiSharma0313</a></li>
+        </ul>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Khushi Sharma. All rights reserved.</p>
-    </footer>
+    <script>
+        // Skills Chart Data
+        var ctx = document.getElementById('skillsChart').getContext('2d');
+        var skillsChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Python', 'JavaScript', 'HTML/CSS', 'Java', 'SQL', 'React.js', 'PHP', 'Node.js', 'C++', 'C'],
+                datasets: [{
+                    label: 'Skills',
+                    data: [90, 85, 80, 75, 70, 65, 60, 55, 50, 45],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#FF5733',
+                        '#FF5733',
+                        '#5FBACB',
+                        '#A27E84',
+                        '#E1A2D3',
+                        '#FB0A6B',
+                        '#00FFA3',
+                    ],
+                }],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
+                            },
+                        },
+                    },
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>
