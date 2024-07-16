@@ -5,12 +5,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #f0f0f0;
+    color: #333;
 }
 
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 header nav ul {
@@ -22,7 +23,7 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 header nav ul li a {
@@ -38,7 +39,8 @@ header nav ul li a:hover {
 /* About section */
 #about {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
+    background-color: #fff;
 }
 
 .profile-pic {
@@ -46,12 +48,13 @@ header nav ul li a:hover {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
+    border: 3px solid #333;
 }
 
 /* Experience section */
 #experience {
-    padding: 50px 20px;
-    background-color: #fff;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
 }
 
 .experience-container {
@@ -61,12 +64,12 @@ header nav ul li a:hover {
 }
 
 .experience-card {
-    background-color: #f9f9f9;
+    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin: 15px;
-    padding: 20px;
-    width: 250px;
+    padding: 25px;
+    width: 280px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -79,16 +82,19 @@ header nav ul li a:hover {
 
 .experience-info h3 {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.25em;
+    color: #333;
 }
 
 .experience-info p {
-    font-size: 0.9em;
+    font-size: 0.95em;
+    color: #666;
 }
 
 /* Projects section */
 #projects {
-    padding: 50px 20px;
+    padding: 60px 20px;
+    background-color: #fff;
 }
 
 .projects-container {
@@ -98,12 +104,12 @@ header nav ul li a:hover {
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin: 15px;
-    padding: 20px;
-    width: 250px;
+    padding: 25px;
+    width: 280px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -117,16 +123,18 @@ header nav ul li a:hover {
 
 .project-info h3 {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.25em;
+    color: #333;
 }
 
 .project-info p {
-    font-size: 0.9em;
+    font-size: 0.95em;
+    color: #666;
 }
 
 /* Contact section */
 #contact {
-    padding: 50px 20px;
+    padding: 60px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
@@ -158,17 +166,21 @@ header nav ul li a:hover {
 
 .contact-details h3 {
     margin: 0;
+    font-size: 1.1em;
+    color: #333;
 }
 
 .contact-details p {
     margin: 0;
+    font-size: 0.95em;
+    color: #666;
 }
 
 .contact-form {
     width: 100%;
     max-width: 500px;
     background-color: #fff;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -182,6 +194,8 @@ header nav ul li a:hover {
 .contact-form label {
     display: block;
     margin-bottom: 5px;
+    font-size: 0.95em;
+    color: #333;
 }
 
 .contact-form input,
@@ -192,6 +206,8 @@ header nav ul li a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
+    font-size: 0.95em;
+    color: #333;
 }
 
 .contact-form button {
@@ -215,7 +231,7 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -230,6 +246,17 @@ footer {
 
     .experience-card,
     .project-card {
-        width: 80%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .contact-form {
+        padding: 20px;
     }
 }
