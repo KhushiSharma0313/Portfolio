@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         labels: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'React', 'PHP', 'Node.js', 'C', 'C++'],
         datasets: [{
             label: 'Skill Proficiency',
-            data: [90, 85, 80, 85, 85, 75, 70, 75, 80, 75], // Replace with your proficiency percentages
+            data: [9, 8.5, 8, 8.5, 8.5, 7.5, 7, 7.5, 8, 7.5], // Skill levels (out of 10)
             backgroundColor: [
                 'rgba(255, 99, 132, 0.5)', // Red
                 'rgba(54, 162, 235, 0.5)', // Blue
@@ -49,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip: {
                     callbacks: {
                         label: function(tooltipItem) {
-                            return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
+                            const dataset = skillsData.datasets[tooltipItem.datasetIndex];
+                            const skillLevel = dataset.data[tooltipItem.index];
+                            return `${dataset.label}: ${skillLevel}/10`;
                         }
                     }
                 }
