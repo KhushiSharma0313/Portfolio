@@ -1,91 +1,51 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Data for skills chart
+    // Skills data
     const skillsData = {
-        labels: ['HTML/CSS', 'JavaScript', 'Python', 'React.js', 'Node.js'],
+        labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'React.js', 'Node.js'],
         datasets: [{
-            label: 'Skills',
-            data: [80, 75, 70, 65, 60],
+            label: 'Skill Proficiency',
+            data: [90, 85, 80, 85, 75, 70], // Replace with your proficiency percentages
             backgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0',
-                '#9966FF'
+                'rgba(255, 99, 132, 0.5)', // Red
+                'rgba(54, 162, 235, 0.5)', // Blue
+                'rgba(255, 206, 86, 0.5)', // Yellow
+                'rgba(75, 192, 192, 0.5)', // Green
+                'rgba(153, 102, 255, 0.5)', // Purple
+                'rgba(255, 159, 64, 0.5)' // Orange
             ],
-            hoverBackgroundColor: [
-                '#FF6384',
-                '#36A2EB',
-                '#FFCE56',
-                '#4BC0C0',
-                '#9966FF'
-            ]
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
         }]
     };
 
-    // Get the canvas element for skills chart
-    const skillsChart = document.getElementById('skillsChart').getContext('2d');
+    // Get the skills chart canvas element
+    const skillsChartCanvas = document.getElementById('skillsChart');
 
-    // Create the pie chart
-    new Chart(skillsChart, {
+    // Initialize the skills chart as a pie chart
+    const skillsChart = new Chart(skillsChartCanvas, {
         type: 'pie',
         data: skillsData,
         options: {
             responsive: true,
-            maintainAspectRatio: false,
-            animation: {
-                animateScale: true,
-                animateRotate: true
-            },
-            tooltips: {
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        return `${data.labels[tooltipItem.index]}: ${data.datasets[0].data[tooltipItem.index]}%`;
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
+                        }
                     }
                 }
             }
         }
     });
-
-    // Function to generate a random color
-    function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
-
-    // Change background color on button click
-    const changeColorBtn = document.getElementById('changeColorBtn');
-    changeColorBtn.addEventListener('click', function() {
-        document.body.style.backgroundColor = getRandomColor();
-    });
-
-    // Smooth scroll to section
-    document.querySelectorAll('nav ul li a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const sectionID = this.getAttribute('href');
-            document.querySelector(sectionID).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Optional: Add hover effects to project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mouseover', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-
-        card.addEventListener('mouseout', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
-
 });
