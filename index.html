@@ -7,14 +7,7 @@
     <title>Khushi Sharma's Portfolio</title>
     <link rel="stylesheet" href="style.css">
 
-<div id="pieChartContainer">
-    <canvas id="pieChart"></canvas>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
-
-    <style>
+  <style>
         .pie-chart {
             max-width: 500px;
             margin: 20px auto;
@@ -180,47 +173,25 @@
         </ul>
     </section>
 
-    <script>
-        // Skills Chart Data
-        var ctx = document.getElementById('skillsChart').getContext('2d');
-        var skillsChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Python', 'JavaScript', 'HTML/CSS', 'Java', 'SQL', 'React.js', 'PHP', 'Node.js', 'C++', 'C'],
-                datasets: [{
-                    label: 'Skills',
-                    data: [90, 85, 80, 75, 70, 65, 60, 55, 50, 45],
-                    backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        '#FF5733',
-                        '#FF5733',
-                        '#5FBACB',
-                        '#A27E84',
-                        '#E1A2D3',
-                        '#FB0A6B',
-                        '#00FFA3',
-                    ],
-                }],
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function (tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2) + '%';
-                            },
-                        },
-                    },
-                },
-            },
-        });
-    </script>
+     <section id="contact">
+        <h2>Contact</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Khushi Sharma. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
