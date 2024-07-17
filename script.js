@@ -1,51 +1,47 @@
-// Toggle Menu Function
-const toggleMenu = () => {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-};
+document.addEventListener('DOMContentLoaded', function() {
+    // Skills data
+    const skillsData = {
+        labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'React.js', 'Node.js'],
+        datasets: [{
+            label: 'Skill Proficiency',
+            data: [90, 85, 80, 85, 75, 70], // Replace with your proficiency percentages
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)', // Red
+                'rgba(54, 162, 235, 0.2)', // Blue
+                'rgba(255, 206, 86, 0.2)', // Yellow
+                'rgba(75, 192, 192, 0.2)', // Green
+                'rgba(153, 102, 255, 0.2)', // Purple
+                'rgba(255, 159, 64, 0.2)' // Orange
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
 
-// Initialize Chart Function
-const initializeChart = () => {
-  const ctx = document.getElementById('skillsChart').getContext('2d');
-  const labels = [
-    'Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'React', 'PHP', 'Node.js',
-    'C', 'C++', 'MySQL', 'SciPy', 'NumPy', 'Matplotlib', 'Excel', 'Power BI',
-    'Tableau', 'Agile Methodologies', 'Scrum', 'Sprint Planning', 'Unit Testing',
-    'Automated Testing', 'Technical Documentation'
-  ];
-  
-  const dataValues = [
-    90, 85, 80, 85, 80, 75, 70, 70, 85, 85, 80, 75, 75, 70, 80, 70, 75, 80,
-    75, 75, 80, 70, 75
-  ];
+    // Chart options
+    const chartOptions = {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    };
 
-  const backgroundColors = [
-    '#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#FF6384', '#36A2EB',
-    '#FFCE56', '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56', '#FF9F40',
-    '#FF6384', '#36A2EB', '#FFCE56', '#FF9F40', '#FF6384', '#36A2EB',
-    '#FFCE56', '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56'
-  ];
+    // Get the skills chart canvas element
+    const skillsChartCanvas = document.getElementById('skillsChart');
 
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels,
-      datasets: [{
-        data: dataValues,
-        backgroundColor: backgroundColors
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false
-    }
-  });
-};
-
-// Event Listeners
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".hamburger-icon").addEventListener("click", toggleMenu);
-  initializeChart();
+    // Initialize the skills chart
+    const skillsChart = new Chart(skillsChartCanvas, {
+        type: 'bar',
+        data: skillsData,
+        options: chartOptions
+    });
 });
