@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Updated font */
+    font-family: 'Montserrat', Arial, sans-serif; /* Updated font */
     line-height: 1.6;
-    background-color: #f0f0f0; /* Soft background */
+    background-image: linear-gradient(120deg, #3498db, #8e44ad); /* Gradient background */
     margin: 0;
     padding: 0;
     color: #333;
@@ -41,10 +41,11 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px; /* Increased font size */
     transition: color 0.3s ease;
     position: relative;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive; /* Fun font */
 }
 
 header nav ul li a:hover {
@@ -85,13 +86,25 @@ section:hover {
 
 h1, h2, h3 {
     color: #333;
-    font-weight: bold; /* Improved readability */
+    font-family: 'Fredoka One', cursive; /* Fun font */
     margin-bottom: 20px; /* Increased spacing */
+}
+
+h1 {
+    font-size: 42px; /* Larger font size */
+}
+
+h2 {
+    font-size: 36px; /* Larger font size */
+}
+
+h3 {
+    font-size: 28px; /* Larger font size */
 }
 
 p {
     color: #555;
-    font-size: 16px;
+    font-size: 18px; /* Increased font size */
     line-height: 1.8;
 }
 
@@ -103,6 +116,7 @@ a {
     color: #3498db;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif; /* Updated font */
 }
 
 a:hover {
@@ -151,11 +165,14 @@ a:hover {
     margin-bottom: 10px;
     color: #3498db;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive; /* Fun font */
+    font-size: 24px; /* Larger font size */
 }
 
 .experience-content p {
     margin-bottom: 10px;
     color: #666;
+    font-size: 18px; /* Increased font size */
 }
 
 /* Skills Section */
@@ -167,6 +184,8 @@ a:hover {
     margin-bottom: 10px; /* Adjusted spacing */
     color: #333;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive; /* Fun font */
+    font-size: 24px; /* Larger font size */
 }
 
 .skill-bar-progress {
@@ -234,11 +253,14 @@ a:hover {
     margin-bottom: 15px;
     color: #3498db;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive; /* Fun font */
+    font-size: 24px; /* Larger font size */
 }
 
 .project-info p {
     margin-bottom: 10px;
     color: #777;
+    font-size: 18px; /* Increased font size */
 }
 
 .project-info a {
@@ -246,6 +268,7 @@ a:hover {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif; /* Updated font */
 }
 
 .project-info a:hover {
@@ -302,6 +325,7 @@ a:hover {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Fredoka One', cursive; /* Fun font */
 }
 
 .contact-form button:hover {
@@ -323,31 +347,38 @@ a:hover {
     }
 
     .experience-item::before {
-        left: 12px;
+        left: 10px;
     }
 
     .experience-content {
-        margin-left: 40px;
+        margin-left: 30px;
     }
 
-    .skill-bar-title {
-        margin-bottom: 5px; /* Adjusted spacing */
+    .skill-bar-title,
+    .project-info h3 {
+        font-size: 20px; /* Adjusted font size */
     }
 
+    .skill-bar-progress,
+    .project-card img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
     .project-card {
         padding: 20px;
     }
 
     .project-info h3 {
-        margin-bottom: 10px;
+        font-size: 20px; /* Adjusted font size */
+    }
+
+    .project-info p {
+        font-size: 16px; /* Adjusted font size */
     }
 
     .contact-form {
         padding: 30px;
     }
-}
-
-/* Background Color */
-body {
-    background-image: linear-gradient(120deg, #3498db, #8e44ad); /* Gradient background */
 }
