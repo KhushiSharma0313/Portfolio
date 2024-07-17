@@ -13,6 +13,17 @@ body {
     padding-top: 80px; /* Adjusted for fixed header */
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
 /* Header Styles */
 header {
     background-color: #2c3e50;
