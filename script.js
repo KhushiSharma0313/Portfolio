@@ -1,17 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Skills data
     const skillsData = {
-        labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'React.js', 'Node.js'],
+        labels: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'React', 'PHP', 'Node.js', 'C', 'C++'],
         datasets: [{
             label: 'Skill Proficiency',
-            data: [90, 85, 80, 85, 75, 70], // Replace with your proficiency percentages
+            data: [90, 85, 80, 85, 85, 75, 70, 75, 80, 75], // Replace with your proficiency percentages
             backgroundColor: [
                 'rgba(255, 99, 132, 0.5)', // Red
                 'rgba(54, 162, 235, 0.5)', // Blue
                 'rgba(255, 206, 86, 0.5)', // Yellow
                 'rgba(75, 192, 192, 0.5)', // Green
                 'rgba(153, 102, 255, 0.5)', // Purple
-                'rgba(255, 159, 64, 0.5)' // Orange
+                'rgba(255, 159, 64, 0.5)', // Orange
+                'rgba(255, 99, 132, 0.5)', // Red
+                'rgba(54, 162, 235, 0.5)', // Blue
+                'rgba(255, 206, 86, 0.5)', // Yellow
+                'rgba(75, 192, 192, 0.5)' // Green
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -19,7 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)'
             ],
             borderWidth: 1
         }]
