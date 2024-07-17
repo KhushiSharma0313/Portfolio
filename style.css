@@ -77,6 +77,8 @@ section {
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 section:hover {
@@ -346,8 +348,23 @@ a:hover {
         padding: 40px 20px;
     }
 
-    .experience-item::before {
-        left: 10px;
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
     }
 
     .experience-content {
@@ -362,23 +379,5 @@ a:hover {
     .skill-bar-progress,
     .project-card img {
         width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-card {
-        padding: 20px;
-    }
-
-    .project-info h3 {
-        font-size: 20px; /* Adjusted font size */
-    }
-
-    .project-info p {
-        font-size: 16px; /* Adjusted font size */
-    }
-
-    .contact-form {
-        padding: 30px;
     }
 }
