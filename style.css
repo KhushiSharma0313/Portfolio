@@ -72,25 +72,18 @@ nav a:hover {
 
 /* Timeline Structure for Experience */
 .experience-timeline {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .experience-item {
+    width: 100%;
+    margin-bottom: 20px;
     position: relative;
-    padding: 20px 0;
-}
-
-.experience-item:nth-child(even) .experience-content {
-    float: right;
-    text-align: left;
-}
-
-.experience-item:nth-child(odd) .experience-content {
-    float: left;
-    text-align: right;
 }
 
 .experience-item::after {
@@ -108,9 +101,10 @@ nav a:hover {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 45%;
+    width: 100%;
     position: relative;
     z-index: 1;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .experience-item:nth-child(even) .experience-content::before {
@@ -136,7 +130,7 @@ nav a:hover {
 }
 
 /* Project Card Flip */
-.projects-container {
+.projects-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -213,10 +207,6 @@ nav a:hover {
         width: 100px;
     }
 
-    .experience-timeline {
-        padding: 0;
-    }
-
     .experience-item .experience-content {
         width: 100%;
         float: none;
@@ -230,5 +220,10 @@ nav a:hover {
 
     .experience-item::after {
         left: calc(50% - 3px);
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
