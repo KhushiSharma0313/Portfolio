@@ -82,7 +82,8 @@ body.dark-mode section {
     margin-bottom: 10px;
 }
 
-.button {
+.button,
+.social-button {
     display: inline-block;
     background-color: #70c2a7; /* Light teal button background */
     color: white;
@@ -93,24 +94,13 @@ body.dark-mode section {
     margin-top: 10px;
 }
 
-.button:hover {
+.button:hover,
+.social-button:hover {
     background-color: #4ca190; /* Darker teal hover background */
 }
 
 .social-button {
-    display: inline-block;
-    background-color: #3b5998; /* Facebook blue */
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
     margin-left: 10px;
-}
-
-.social-button:hover {
-    background-color: #2d4474; /* Darker Facebook blue */
 }
 
 /* Experience section styles */
@@ -175,6 +165,7 @@ body.dark-mode section {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     position: relative;
+    margin: 5px; /* Adjust margin as per your preference */
 }
 
 .project-card:hover {
