@@ -1,79 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+// script.js
 
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Define skills data
-    const skillsData = {
-        labels: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'React', 'PHP', 'Node.js', 'C', 'C++'],
-        datasets: [{
-            label: 'Skill Proficiency',
-            data: [90, 85, 80, 85, 85, 75, 70, 75, 80, 75], // Replace with your proficiency percentages
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.5)', // Red
-                'rgba(54, 162, 235, 0.5)', // Blue
-                'rgba(255, 206, 86, 0.5)', // Yellow
-                'rgba(75, 192, 192, 0.5)', // Green
-                'rgba(153, 102, 255, 0.5)', // Purple
-                'rgba(255, 159, 64, 0.5)', // Orange
-                'rgba(255, 99, 132, 0.5)', // Red
-                'rgba(54, 162, 235, 0.5)', // Blue
-                'rgba(255, 206, 86, 0.5)', // Yellow
-                'rgba(75, 192, 192, 0.5)' // Green
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)'
-            ],
-            borderWidth: 1
-        }]
-    };
-
-    // Get the skills chart canvas element
-    const skillsChartCanvas = document.getElementById('skillsChart');
-
-    // Ensure the chart canvas element exists before initializing
-    if (skillsChartCanvas) {
-        // Initialize the skills chart
-        const skillsChart = new Chart(skillsChartCanvas, {
-            type: 'pie',
-            data: skillsData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false, // Allow resizing
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return `${tooltipItem.label}: ${tooltipItem.raw.toFixed(2)}%`;
-                            }
-                        }
-                    }
+// Function to initialize and display the skills chart
+function displaySkillsChart() {
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Python', 'Java', 'JavaScript', 'HTML', 'CSS', 'React', 'PHP', 'Node.js', 'C', 'C++'],
+            datasets: [{
+                label: 'Skill Level',
+                data: [90, 80, 85, 95, 95, 80, 75, 70, 65, 60],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
-    }
-});
+        }
+    });
+}
+
+// Call the function to display the chart when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', displaySkillsChart);
