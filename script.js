@@ -42,10 +42,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    position: 'right',
-                    onClick: (e, legendItem) => {
-                        showSkillDescription(legendItem.text);
+                    position: 'right'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label;
+                        }
                     }
+                }
+            },
+            onClick: (event, elements) => {
+                if (elements && elements.length > 0) {
+                    const clickedIndex = elements[0].index;
+                    const skillName = skillsChart.data.labels[clickedIndex];
+                    showSkillDescription(skillName);
                 }
             }
         }
@@ -56,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const modal = document.getElementById('skillModal');
         const skillTitle = document.getElementById('skillTitle');
         const skillDescription = document.getElementById('skillDescription');
-        
+
         skillTitle.textContent = skillName;
         skillDescription.textContent = skillDescriptions[skillName];
 
@@ -81,45 +92,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Function to add a skill
-    window.addSkill = function() {
-        const skillName = document.getElementById('skillName').value;
-        const skillValue = document.getElementById('skillValue').value;
+    // Function to toggle light/dark mode
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    if (toggleSwitch) {
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    }
 
-        if(skillName && skillValue) {
-            skillsChart.data.labels.push(skillName);
-            skillsChart.data.datasets[0].data.push(skillValue);
-            skillsChart.update();
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
         }
-    };
+    }
 
-    // Function to remove a skill
-    window.removeSkill = function() {
-        const skillName = document.getElementById('skillName').value;
+    // Check local storage for theme preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
 
-        const index = skillsChart.data.labels.indexOf(skillName);
-        if (index > -1) {
-            skillsChart.data.labels.splice(index, 1);
-            skillsChart.data.datasets[0].data.splice(index, 1);
-            skillsChart.update();
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
         }
-    };
-
-    // Function to update a skill
-    window.updateSkill = function() {
-        const skillName = document.getElementById('skillName').value;
-        const skillValue = document.getElementById('skillValue').value;
-
-        const index = skillsChart.data.labels.indexOf(skillName);
-        if (index > -1) {
-            skillsChart.data.datasets[0].data[index] = skillValue;
-            skillsChart.update();
-        }
-    };
-
-    // Function to reset the chart
-    window.resetChart = function() {
-        skillsChart.data = initialData;
-        skillsChart.update();
-    };
+    }
 });
