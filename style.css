@@ -8,7 +8,7 @@
 body {
     font-family: 'Montserrat', Arial, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(120deg, #ff6f61, #ffcc00);
+    background: linear-gradient(120deg, #3498db, #8e44ad);
     color: #333;
     padding-top: 80px; /* Adjusted for fixed header */
 }
@@ -16,7 +16,7 @@ body {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff4081;
+    background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -59,6 +59,7 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -70,9 +71,47 @@ canvas {
     height: auto;
 }
 
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 /* Header Styles */
 header {
-    background-color: #222;
+    background-color: #2c3e50;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -99,12 +138,13 @@ header nav ul li a {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive;
     position: relative;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ffcc00;
+    color: #3498db;
 }
 
 header nav ul li a::after {
@@ -114,7 +154,7 @@ header nav ul li a::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #ffcc00;
+    background-color: #3498db;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
@@ -142,6 +182,7 @@ section:hover {
 
 h1, h2, h3 {
     color: #333;
+    font-family: 'Fredoka One', cursive;
     margin-bottom: 20px;
 }
 
@@ -168,13 +209,14 @@ ul {
 }
 
 a {
-    color: #ff4081;
+    color: #3498db;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 a:hover {
-    color: #ff1e72;
+    color: #2980b9;
 }
 
 /* About Section */
@@ -204,7 +246,7 @@ a:hover {
     left: 22px;
     width: 12px;
     height: 12px;
-    background-color: #ff4081;
+    background-color: #3498db;
     border-radius: 50%;
     transform: translateX(-50%);
 }
@@ -217,8 +259,9 @@ a:hover {
 
 .experience-content h3 {
     margin-bottom: 10px;
-    color: #ff4081;
+    color: #3498db;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive;
     font-size: 24px;
 }
 
@@ -237,12 +280,13 @@ a:hover {
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive;
     font-size: 24px;
 }
 
 .skill-bar-progress {
     height: 10px;
-    background-color: #ffcc00;
+    background-color: #3498db;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -265,7 +309,7 @@ a:hover {
     left: 0;
     height: 100%;
     width: 80%;
-    background-color: #ff4081;
+    background-color: #2980b9;
     transition: width 1s ease;
 }
 
@@ -303,8 +347,9 @@ a:hover {
 
 .project-info h3 {
     margin-bottom: 15px;
-    color: #ff4081;
+    color: #3498db;
     font-weight: bold;
+    font-family: 'Fredoka One', cursive;
     font-size: 24px;
 }
 
@@ -315,14 +360,15 @@ a:hover {
 }
 
 .project-info a {
-    color: #ff4081;
+    color: #3498db;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .project-info a:hover {
-    color: #ff1e72;
+    color: #2980b9;
 }
 
 /* Contact Section */
@@ -342,7 +388,7 @@ a:hover {
 
 .contact-info ul li i {
     margin-right: 15px;
-    color: #ff4081;
+    color: #3498db;
     font-size: 24px;
 }
 
@@ -370,15 +416,16 @@ a:hover {
     padding: 15px;
     border: none;
     border-radius: 8px;
-    background-color: #ff4081;
+    background-color: #3498db;
     color: #fff;
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Fredoka One', cursive;
 }
 
 .contact-form button:hover {
-    background-color: #ff1e72;
+    background-color: #2980b9;
 }
 
 /* Responsive Design */
@@ -389,37 +436,87 @@ a:hover {
 }
 
 @media (max-width: 992px) {
-    header nav ul li {
-        display: block;
-        margin-right: 0;
-        text-align: center;
+    .skill-bar-progress {
+        height: 8px; /* Adjusted height for smaller screens */
     }
 
-    .projects-container {
-        grid-template-columns: 1fr;
+    .skill-bar-title {
+        font-size: 20px; /* Reduced font size for smaller screens */
     }
 }
 
 @media (max-width: 768px) {
-    .experience-item {
-        margin-left: 0;
+    header {
+        padding: 15px 0;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    header nav ul li a {
+        font-size: 18px;
+    }
+
+    .profile-pic {
+        width: 150px; /* Reduced size for smaller screens */
+        height: 150px;
     }
 
     .experience-item::before {
-        left: -10px;
+        left: 0; /* Adjusted position for smaller screens */
+        transform: translateX(0);
     }
 
     .experience-content {
-        margin-left: 30px;
+        margin-left: 0; /* Adjusted margin for smaller screens */
+        padding-left: 0;
+    }
+
+    .skill-bar-title {
+        font-size: 18px; /* Further reduced font size for smaller screens */
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column layout for projects on smaller screens */
     }
 }
 
 @media (max-width: 576px) {
-    .chart-container {
-        height: 300px;
+    header {
+        padding: 10px 0;
     }
 
-    .contact-form {
-        padding: 20px;
+    .button {
+        font-size: 14px; /* Reduced font size for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 36px; /* Further reduced font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 30px; /* Further reduced font size for smaller screens */
+    }
+
+    h3 {
+        font-size: 24px; /* Further reduced font size for smaller screens */
+    }
+
+    p {
+        font-size: 16px; /* Reduced font size for smaller screens */
+    }
+
+    .profile-pic {
+        width: 120px; /* Further reduced size for smaller screens */
+        height: 120px;
     }
 }
