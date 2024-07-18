@@ -8,14 +8,14 @@
 /* Body styles */
 body {
     font-family: 'Press Start 2P', sans-serif;
-    background-color: #3d3d3d; /* Dark background reminiscent of classic 2D games */
-    color: #fff; /* White text for better readability */
+    background-color: #e0e0e0; /* Light gray background */
+    color: #333; /* Dark text for readability */
     line-height: 1.6;
 }
 
 /* Header styles */
 header {
-    background-color: #1a1a1a; /* Dark header background */
+    background-color: #70c2a7; /* Light teal header background */
     padding: 10px 0;
     text-align: center;
     position: relative; /* Ensure header is not fixed */
@@ -41,7 +41,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #333; /* Darker hover background */
+    background-color: #4ca190; /* Darker teal hover background */
     border-radius: 5px;
 }
 
@@ -50,10 +50,53 @@ section {
     padding: 20px;
     margin: 20px auto;
     max-width: 900px;
-    background-color: #f0f0f0; /* Light content background */
+    background-color: #fff; /* White background */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #333; /* Dark text for better contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* About section styles */
+#about {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #70c2a7; /* Light teal button background */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #4ca190; /* Darker teal hover background */
+}
+
+.social-button {
+    display: inline-block;
+    background-color: #3b5998; /* Facebook blue */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.social-button:hover {
+    background-color: #2d4474; /* Darker Facebook blue */
 }
 
 /* Experience section styles */
@@ -70,7 +113,7 @@ section {
 .experience-item {
     width: 100%;
     max-width: 600px;
-    background-color: #e0e0e0; /* Lighter experience item background */
+    background-color: #f0f0f0; /* Light gray experience item background */
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
@@ -142,7 +185,7 @@ section {
 
 .project-back {
     padding: 20px;
-    background-color: #e0e0e0; /* Lighter background for project details */
+    background-color: #f0f0f0; /* Light gray background for project details */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -167,7 +210,7 @@ section {
 .project-back a {
     display: block;
     text-align: center;
-    background-color: #007BFF;
+    background-color: #70c2a7; /* Light teal button background */
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -176,7 +219,7 @@ section {
 }
 
 .project-back a:hover {
-    background-color: #0056b3;
+    background-color: #4ca190; /* Darker teal hover background */
 }
 
 /* Contact section styles */
