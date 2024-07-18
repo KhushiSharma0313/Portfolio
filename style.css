@@ -13,6 +13,12 @@ body {
     line-height: 1.6;
 }
 
+/* Dark mode */
+body.dark-mode {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text for readability */
+}
+
 /* Header styles */
 header {
     background-color: #70c2a7; /* Light teal header background */
@@ -54,6 +60,13 @@ section {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #333; /* Dark text for readability */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode for sections */
+body.dark-mode section {
+    background-color: #444; /* Dark mode background */
+    color: #fff; /* Light text for dark mode */
 }
 
 /* About section styles */
