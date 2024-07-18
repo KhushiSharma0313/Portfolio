@@ -8,14 +8,14 @@
 /* Body styles */
 body {
     font-family: 'Press Start 2P', sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #e0e0e0; /* Light gray background */
     color: #333; /* Dark text for readability */
     line-height: 1.6;
 }
 
 /* Header styles */
 header {
-    background-color: #7f7f7f; /* Gray header background */
+    background-color: #70c2a7; /* Light teal header background */
     padding: 10px 0;
     text-align: center;
     position: relative; /* Ensure header is not fixed */
@@ -35,13 +35,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333; /* Dark text */
+    color: #fff;
     padding: 10px 15px;
     transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #9bcdff; /* Light blue hover background */
+    background-color: #4ca190; /* Darker teal hover background */
     border-radius: 5px;
 }
 
@@ -50,7 +50,7 @@ section {
     padding: 20px;
     margin: 20px auto;
     max-width: 900px;
-    background-color: #fff; /* White section background */
+    background-color: #fff; /* White background */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #333; /* Dark text for readability */
@@ -66,23 +66,21 @@ section {
     height: 150px;
     border-radius: 50%;
     margin-bottom: 10px;
-    border: 5px solid #9bcdff; /* Light blue border */
 }
 
 .button {
     display: inline-block;
-    background-color: #9bcdff; /* Light blue button background */
+    background-color: #70c2a7; /* Light teal button background */
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
-    transition: background-color 0.3s;
 }
 
 .button:hover {
-    background-color: #79b8e6; /* Darker blue hover background */
+    background-color: #4ca190; /* Darker teal hover background */
 }
 
 .social-button {
@@ -131,7 +129,7 @@ section {
 }
 
 .experience-content p {
-    color: #666; /* Medium gray text */
+    color: #666;
     margin-bottom: 10px;
 }
 
@@ -157,7 +155,7 @@ section {
 }
 
 .project-card {
-    background-color: #fff; /* White project card background */
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -201,7 +199,7 @@ section {
 }
 
 .project-back p {
-    color: #666; /* Medium gray text */
+    color: #666;
     margin-bottom: 10px;
 }
 
@@ -212,7 +210,7 @@ section {
 .project-back a {
     display: block;
     text-align: center;
-    background-color: #9bcdff; /* Light blue button background */
+    background-color: #70c2a7; /* Light teal button background */
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -221,7 +219,7 @@ section {
 }
 
 .project-back a:hover {
-    background-color: #79b8e6; /* Darker blue hover background */
+    background-color: #4ca190; /* Darker teal hover background */
 }
 
 /* Contact section styles */
@@ -239,13 +237,13 @@ section {
 }
 
 #contact ul li a {
-    color: #9bcdff; /* Light blue link color */
+    color: #007BFF;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 #contact ul li a:hover {
-    color: #79b8e6; /* Darker blue hover color */
+    color: #0056b3;
 }
 
 /* Skills section styles */
@@ -272,15 +270,15 @@ section {
 }
 
 .modal-content {
-    background-color: #fff; /* White modal content background */
+    background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #ccc; /* Light border */
+    border: 1px solid #888;
     width: 80%;
 }
 
 .close {
-    color: #777; /* Dark gray close button color */
+    color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -288,7 +286,7 @@ section {
 
 .close:hover,
 .close:focus {
-    color: #333; /* Dark close button color */
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
