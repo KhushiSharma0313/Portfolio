@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -61,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data: skillsData,
             options: {
                 responsive: true,
+                maintainAspectRatio: false, // Allow resizing
                 plugins: {
                     legend: {
                         position: 'top',
