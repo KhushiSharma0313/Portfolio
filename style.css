@@ -11,6 +11,7 @@ body {
     background-color: #e0e0e0; /* Light gray background */
     color: #333; /* Dark text for readability */
     line-height: 1.6;
+    margin: 0; /* Remove default margin */
 }
 
 /* Dark mode */
@@ -53,8 +54,8 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 10px; /* Decrease padding */
+    margin: 10px auto; /* Decrease margin */
     max-width: 900px;
     background-color: #fff; /* White background */
     border-radius: 8px;
@@ -129,8 +130,8 @@ body.dark-mode section {
     background-color: #f0f0f0; /* Light gray experience item background */
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    padding: 20px;
+    margin: 10px 0; /* Decrease margin */
+    padding: 15px; /* Decrease padding */
 }
 
 .experience-content {
@@ -162,7 +163,7 @@ body.dark-mode section {
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 10px; /* Decrease gap */
     justify-items: center;
     align-items: start;
 }
@@ -181,7 +182,7 @@ body.dark-mode section {
 }
 
 .project-front {
-    padding: 20px;
+    padding: 15px; /* Decrease padding */
     text-align: center;
 }
 
@@ -197,7 +198,7 @@ body.dark-mode section {
 }
 
 .project-back {
-    padding: 20px;
+    padding: 15px; /* Decrease padding */
     background-color: #f0f0f0; /* Light gray background for project details */
     height: 100%;
     display: flex;
