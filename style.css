@@ -10,6 +10,13 @@ body {
     font-family: 'Press Start 2P', sans-serif;
     background-color: #f0f0f0;
     line-height: 1.6;
+    color: #333; /* Default text color */
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 /* Header styles */
@@ -54,47 +61,9 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* About section styles */
-#about {
-    text-align: center;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.button:hover {
-    background-color: #45a049;
-}
-
-.social-button {
-    display: inline-block;
-    background-color: #0077B5;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.social-button:hover {
-    background-color: #046293;
+section.dark-mode {
+    background-color: #444;
+    color: #f0f0f0;
 }
 
 /* Experience section styles */
@@ -118,12 +87,18 @@ section {
     padding: 20px;
 }
 
+.experience-item.dark-mode {
+    background-color: #666;
+    color: #f0f0f0;
+}
+
 .experience-content {
     text-align: left;
 }
 
 .experience-content h3 {
     margin-bottom: 5px;
+    color: #333; /* Ensure readability */
 }
 
 .experience-content p {
@@ -194,6 +169,11 @@ section {
     width: 100%;
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
+}
+
+.project-back.dark-mode {
+    background-color: #555;
+    color: #f0f0f0;
 }
 
 .project-back p {
