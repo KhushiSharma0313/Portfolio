@@ -53,7 +53,59 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+    // Function to add a skill
+    window.addSkill = function() {
+        const skillName = document.getElementById('skillName').value;
+        const skillValue = document.getElementById('skillValue').value;
 
+        if(skillName && skillValue) {
+            skillsChart.data.labels.push(skillName);
+            skillsChart.data.datasets[0].data.push(skillValue);
+            skillsChart.update();
+        }
+    };
+
+    // Function to remove a skill
+    window.removeSkill = function() {
+        const skillName = document.getElementById('skillName').value;
+
+        const index = skillsChart.data.labels.indexOf(skillName);
+        if (index > -1) {
+            skillsChart.data.labels.splice(index, 1);
+            skillsChart.data.datasets[0].data.splice(index, 1);
+            skillsChart.update();
+        }
+    };
+
+    // Function to update a skill
+    window.updateSkill = function() {
+        const skillName = document.getElementById('skillName').value;
+        const skillValue = document.getElementById('skillValue').value;
+
+        const index = skillsChart.data.labels.indexOf(skillName);
+        if (index > -1) {
+            skillsChart.data.datasets[0].data[index] = skillValue;
+            skillsChart.update();
+        }
+    };
+
+    // Function to reset the chart
+    window.resetChart = function() {
+        skillsChart.data = initialData;
+        skillsChart.update();
+    };
+
+    // Function to show skill description in modal
+    function showSkillDescription(skillName) {
+        const modal = document.getElementById('skillModal');
+        const skillTitle = document.getElementById('skillTitle');
+        const skillDescription = document.getElementById('skillDescription');
+        
+        skillTitle.textContent = skillName;
+        skillDescription.textContent = skillDescriptions[skillName];
+
+        modal.style.display = 'block';
+    }
 
     // Get the modal
     const modal = document.getElementById('skillModal');
@@ -73,4 +125,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
-
