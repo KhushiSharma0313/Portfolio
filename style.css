@@ -8,13 +8,14 @@
 /* Body styles */
 body {
     font-family: 'Press Start 2P', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #3d3d3d; /* Dark background reminiscent of classic 2D games */
+    color: #fff; /* White text for better readability */
     line-height: 1.6;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: #1a1a1a; /* Dark header background */
     padding: 10px 0;
     text-align: center;
     position: relative; /* Ensure header is not fixed */
@@ -40,7 +41,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #333; /* Darker hover background */
     border-radius: 5px;
 }
 
@@ -49,52 +50,10 @@ section {
     padding: 20px;
     margin: 20px auto;
     max-width: 900px;
-    background-color: #fff;
+    background-color: #f0f0f0; /* Light content background */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* About section styles */
-#about {
-    text-align: center;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.button:hover {
-    background-color: #45a049;
-}
-
-.social-button {
-    display: inline-block;
-    background-color: #0077B5;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-.social-button:hover {
-    background-color: #046293;
+    color: #333; /* Dark text for better contrast */
 }
 
 /* Experience section styles */
@@ -111,7 +70,7 @@ section {
 .experience-item {
     width: 100%;
     max-width: 600px;
-    background-color: #f9f9f9;
+    background-color: #e0e0e0; /* Lighter experience item background */
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
@@ -183,7 +142,7 @@ section {
 
 .project-back {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #e0e0e0; /* Lighter background for project details */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -264,7 +223,6 @@ section {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
 
