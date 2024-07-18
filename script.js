@@ -125,3 +125,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
+
+// Theme Toggle
+const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggleButton.addEventListener('click', () => {
+    if (body.classList.contains('day-theme')) {
+        body.classList.remove('day-theme');
+        body.classList.add('night-theme');
+    } else {
+        body.classList.remove('night-theme');
+        body.classList.add('day-theme');
+    }
+});
+
+// Popup Descriptions for Skills
+const skills = document.querySelectorAll('.skill-item');
+
+skills.forEach(skill => {
+    skill.addEventListener('click', () => {
+        const description = skill.querySelector('.description');
+        description.style.display = description.style.display === 'none' ? 'block' : 'none';
+    });
+});
+
