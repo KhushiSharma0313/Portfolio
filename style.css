@@ -194,11 +194,15 @@ a:hover {
 .experience-timeline {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
 .experience-item {
     margin-bottom: 40px;
     position: relative;
+    width: 50%;
+    max-width: 600px;
 }
 
 .experience-item::before {
@@ -303,7 +307,7 @@ a:hover {
 
 .project-info p {
     margin-bottom: 10px;
-    color: #777;
+    color: #666;
     font-size: 18px;
 }
 
@@ -389,45 +393,45 @@ a:hover {
     }
 
     .projects-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .experience-item {
+        width: 100%;
     }
 }
 
-/* Video Game Vibes */
-.experience-item::before {
-    background-color: #ff4d4d; /* Red dot */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .experience-item::before {
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    .experience-content {
+        margin-left: 0;
+        padding-left: 0;
+    }
 }
 
-.project-card {
-    background-color: #333; /* Dark background */
-    color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
+@media (max-width: 576px) {
+    .button {
+        display: block;
+        width: 100%;
+    }
 
-.project-info h3 {
-    margin-bottom: 15px;
-    color: #ff4d4d; /* Red text */
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.project-info p {
-    margin-bottom: 10px;
-    color: #ccc; /* Light text */
-    font-size: 18px;
-}
-
-.project-info a {
-    color: #ff4d4d; /* Red link */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.project-info a:hover {
-    color: #ff1a1a; /* Darker red on hover */
+    .social-button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 }
