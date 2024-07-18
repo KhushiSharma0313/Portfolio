@@ -31,6 +31,7 @@ var data = {
 
 // Configuration options
 var options = {
+    indexAxis: 'y', // Changed to y for bar chart
     responsive: true,
     maintainAspectRatio: false,
     scales: {
