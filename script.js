@@ -1,49 +1,54 @@
-// Get the canvas element
-var ctx = document.getElementById('skillsChart').getContext('2d');
+// script.js
 
-// Data for the chart
-var data = {
-    labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'React', 'SQL'],
-    datasets: [{
-        label: 'Skill Level',
-        data: [90, 85, 80, 85, 75, 70, 65],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)',
-            'rgba(255, 159, 64, 0.6)',
-            'rgba(255, 99, 132, 0.6)'
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(255, 99, 132, 1)'
-        ],
-        borderWidth: 1
-    }]
-};
+// Wait for the DOM to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Get the context of the canvas where the skills chart will be rendered
+    const ctx = document.getElementById('skillsChart').getContext('2d');
 
-// Configuration options
-var options = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-        legend: {
-            display: true,
-            position: 'bottom'
+    // Create a new Chart instance
+    const skillsChart = new Chart(ctx, {
+        type: 'radar', // The type of chart we want to create
+        data: {
+            labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'React', 'SQL'], // Labels for the chart
+            datasets: [{
+                label: 'Skills Proficiency', // The label for the dataset
+                data: [85, 80, 90, 75, 70, 65, 80], // Data points representing the proficiency in each skill
+                backgroundColor: 'rgba(54, 162, 235, 0.2)', // Background color of the data points
+                borderColor: 'rgba(54, 162, 235, 1)', // Border color of the data points
+                borderWidth: 2 // Width of the border
+            }]
+        },
+        options: {
+            scale: {
+                ticks: {
+                    beginAtZero: true, // Ensure the scale begins at zero
+                    max: 100 // Set the maximum value for the scale
+                }
+            }
         }
-    }
-};
+    });
 
-// Create the chart
-var skillsChart = new Chart(ctx, {
-    type: 'pie',
-    data: data,
-    options: options
+    // Add smooth scroll behavior for navigation links
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add a dynamic effect to the Download CV button
+    const downloadButton = document.querySelector('.button');
+    downloadButton.addEventListener('mouseenter', () => {
+        downloadButton.style.backgroundColor = '#4CAF50';
+    });
+
+    downloadButton.addEventListener('mouseleave', () => {
+        downloadButton.style.backgroundColor = '';
+    });
 });
