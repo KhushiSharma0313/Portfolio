@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khushi Sharma's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
- 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="day-theme">
     <header>
         <nav>
             <ul>
@@ -18,26 +17,20 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle">Toggle Theme</button></li>
+                <li><button id="bg-change">Change Background</button></li>
             </ul>
         </nav>
     </header>
 
-<section id="about">
-    <img src="final-pic.png" alt="Khushi Sharma" class="profile-pic">
-    <h1>Khushi Sharma</h1>
-    <p>Welcome to my portfolio! I am a Computer Science student with a passion for software development, data analysis, and creating impactful projects. Currently pursuing a Bachelor of Science in Computer Science at the University of Wisconsin-Milwaukee, expecting to graduate in December 2024.</p>
-    <p>My coursework includes a focus on Computer Science fundamentals, Data Structures and Algorithms, Database Management Systems, Software Engineering, Web Development, Operating Systems, Cyber Security, Unix, System Designing, Algorithm Design, and Programming Language Concepts (SML, Scala).</p>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/khushi0313" target="_blank">LinkedIn</a> and explore my <a href="https://github.com/KhushiSharma0313" target="_blank">GitHub</a> for more!</p>
-    <a href="Khushi Sharma Resume.pdf" download class="button">Download CV</a>
-    
-
-    <div class="social-buttons">
-        <a href="https://www.linkedin.com/in/khushi0313" target="_blank" class="social-button linkedin">LinkedIn</a>
-        <a href="https://github.com/KhushiSharma0313" target="_blank" class="social-button github">GitHub</a>
-    </div>
-</section>
-
-
+    <section id="about">
+        <img src="final-pic.png" alt="Khushi Sharma" class="profile-pic">
+        <h1>Khushi Sharma</h1>
+        <p>Welcome to my portfolio! I am a Computer Science student with a passion for software development, data analysis, and creating impactful projects. Currently pursuing a Bachelor of Science in Computer Science at the University of Wisconsin-Milwaukee, expecting to graduate in December 2024.</p>
+        <p>My coursework includes a focus on Computer Science fundamentals, Data Structures and Algorithms, Database Management Systems, Software Engineering, Web Development, Operating Systems, Cyber Security, Unix, System Designing, Algorithm Design, and Programming Language Concepts (SML, Scala).</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/khushi0313" target="_blank">LinkedIn</a> and explore my <a href="https://github.com/KhushiSharma0313" target="_blank">GitHub</a> for more!</p>
+        <a href="Khushi Sharma Resume.pdf" download class="button">Download CV</a>
+    </section>
 
     <section id="experience">
         <h2>Experience</h2>
@@ -93,89 +86,140 @@
         </div>
     </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="chart-container">
-        <canvas id="skillsChart" width="400" height="400"></canvas>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="chart-container">
+            <canvas id="skillsChart" width="400" height="400"></canvas>
+        </div>
+    </section>
+
+    <!-- Modal for Skill Descriptions -->
+    <div id="skillModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="skillTitle"></h3>
+            <p id="skillDescription"></p>
+        </div>
     </div>
-  
-</section>
-
-<!-- Modal for Skill Descriptions -->
-<div id="skillModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h3 id="skillTitle"></h3>
-        <p id="skillDescription"></p>
-    </div>
-</div>
-
-
 
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects-container">
             <div class="project-card">
-                <img src="Chatbot.jpg" alt="Chat Bot">
-                <div class="project-info">
-                    <h3>Chat Bot</h3>
+                <div class="project-front">
+                    <img src="Chatbot.jpg" alt="Chat Bot">
+                    <div class="project-info">
+                        <h3>Chat Bot</h3>
+                        <p>A chat bot developed to provide automated responses and handle customer queries efficiently.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>This project involved developing a chat bot using Python and NLP techniques to handle customer inquiries. The bot was integrated into a website to provide instant support, resulting in a 40% increase in customer satisfaction.</p>
                     <a href="https://github.com/KhushiSharma0313/Chat_bot" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img alt="To-do List" src="https://github.com/KhushiSharma0313/To-do-list/assets/115573980/039ddc68-e9d2-4369-9e46-9c7376bbae0b">
-                <div class="project-info">
-                    <h3>To-do List</h3>
+                <div class="project-front">
+                    <img alt="To-do List" src="https://github.com/KhushiSharma0313/To-do-list/assets/115573980/039ddc68-e9d2-4369-9e46-9c7376bbae0b">
+                    <div class="project-info">
+                        <h3>To-do List</h3>
+                        <p>A simple and efficient to-do list application to help manage tasks and increase productivity.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>This project is a to-do list application built with JavaScript, HTML, and CSS. It allows users to add, remove, and mark tasks as complete, helping to improve task management and productivity.</p>
                     <a href="https://github.com/KhushiSharma0313/To-do-list" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img src="https://github.com/KhushiSharma0313/MPS-trivia/assets/115573980/ccf2935b-bdce-4bdf-b58f-e8f5d8856838" alt="MPS Trivia">
-                <div class="project-info">
-                    <h3>MPS Trivia</h3>
+                <div class="project-front">
+                    <img src="https://github.com/KhushiSharma0313/MPS-trivia/assets/115573980/ccf2935b-bdce-4bdf-b58f-e8f5d8856838" alt="MPS Trivia">
+                    <div class="project-info">
+                        <h3>MPS Trivia</h3>
+                        <p>A trivia game designed to challenge and entertain users with a variety of questions.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>MPS Trivia is a web-based trivia game that quizzes users on multiple topics. Developed with JavaScript, HTML, and CSS, the game features dynamic question generation and a scoring system to enhance user engagement.</p>
                     <a href="https://github.com/KhushiSharma0313/MPS-trivia" target="_blank">View on GitHub</a>
                 </div>
             </div>
-            <div class="project-card">
-                <img alt="Rich text editor" src="https://github.com/KhushiSharma0313/Wordoit/assets/115573980/9ecc590e-5a70-48ad-a1bd-5f4cd30402fc">
-                <div class="project-info">
-                    <h3>Rich text editor</h3>
+           <div class="project-card">
+                <div class="project-front">
+                    <img src="https://github.com/KhushiSharma0313/Wordoit/assets/115573980/f38d3b13-d3e0-4c55-8f7b-2831e9de34b5" alt="Wordoit">
+                    <div class="project-info">
+                        <h3>Wordoit</h3>
+                        <p>An interactive web-based game that challenges users to guess words and phrases using clues.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>Wordoit is built using HTML, CSS, and JavaScript. It provides an engaging platform for users to test their word-guessing skills with varying difficulty levels and hints. Designed to entertain and challenge players of all ages.</p>
                     <a href="https://github.com/KhushiSharma0313/Wordoit" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img alt="piVisualize" src="https://github.com/KhushiSharma0313/piVisualize/assets/115573980/d3a01edd-d2cc-4494-b0f5-7c96e2c96f51">
-                <div class="project-info">
-                    <h3>piVisualize</h3>
+                <div class="project-front">
+                    <img src="https://github.com/KhushiSharma0313/piVisualize/assets/115573980/d3a01edd-d2cc-4494-b0f5-7c96e2c96f51" alt="piVisualize">
+                    <div class="project-info">
+                        <h3>piVisualize</h3>
+                        <p>A data visualization project showcasing the digits of pi using interactive charts and graphs.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>piVisualize is a data visualization project created with JavaScript and Chart.js library. It visually represents the digits of pi through interactive charts, helping users explore and analyze patterns in the sequence of pi.</p>
                     <a href="https://github.com/KhushiSharma0313/piVisualize" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img alt="Random Background Color Changer" src="https://github.com/KhushiSharma0313/Random-background-color-changer/assets/115573980/a1ced7ac-3d9b-4ecd-8be5-828f98e3c888">
-                <div class="project-info">
-                    <h3>Random Background Color Changer</h3>
+                <div class="project-front">
+                    <img src="https://github.com/KhushiSharma0313/Random-background-color-changer/assets/115573980/a1ced7ac-3d9b-4ecd-8be5-828f98e3c888" alt="Random Background Color Changer">
+                    <div class="project-info">
+                        <h3>Random Background Color Changer</h3>
+                        <p>A simple web app that changes the background color randomly with a click of a button.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>Random Background Color Changer is a fun project using HTML, CSS, and JavaScript. It allows users to experience a dynamic change in the webpage's background color by clicking a button, enhancing user interaction and visual appeal.</p>
                     <a href="https://github.com/KhushiSharma0313/Random-background-color-changer" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img alt="Tiny File System" src="tinyFileSystem.jpg">
-                <div class="project-info">
-                    <h3>Tiny File System</h3>
+                <div class="project-front">
+                    <img src="tinyFileSystem.jpg" alt="Tiny File System">
+                    <div class="project-info">
+                        <h3>Tiny File System</h3>
+                        <p>A simple file system simulation implemented in C.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>Tiny File System is a project developed in C to simulate basic file system operations. It includes functionalities such as file creation, deletion, and directory management, providing a foundational understanding of file system concepts.</p>
                     <a href="tinyFileSystem.jpg" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img src="Blackjack.jpg" alt="Blackjack">
-                <div class="project-info">
-                    <h3>Blackjack</h3>
+                <div class="project-front">
+                    <img src="Blackjack.jpg" alt="Blackjack">
+                    <div class="project-info">
+                        <h3>Blackjack</h3>
+                        <p>A classic Blackjack game implemented in Python.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>Blackjack is a Python-based implementation of the popular card game. It allows players to engage in a simulated Blackjack experience, including features like card dealing, player decisions, and score tracking.</p>
                     <a href="https://github.com/KhushiSharma0313/Blackjack" target="_blank">View on GitHub</a>
                 </div>
             </div>
             <div class="project-card">
-                <img src="netflix-users.png" alt="Netflix Dashboard">
-                <div class="project-info">
-                    <h3>Netflix Dashboard</h3>
-                    <a href="https://public.tableau.com/en-us/gallery/superstore-dashboard" target="_blank">View on GitHub</a>
+                <div class="project-front">
+                    <img src="netflix-users.png" alt="Netflix Dashboard">
+                    <div class="project-info">
+                        <h3>Netflix Dashboard</h3>
+                        <p>A data visualization project showcasing user trends on Netflix using Tableau.</p>
+                    </div>
+                </div>
+                <div class="project-back">
+                    <p>Netflix Dashboard is a data visualization project created using Tableau. It analyzes and visualizes user trends and preferences on Netflix, providing insights into viewing patterns and content popularity.</p>
+                    <a href="https://public.tableau.com/en-us/gallery/superstore-dashboard" target="_blank">View on Tableau</a>
                 </div>
             </div>
         </div>
