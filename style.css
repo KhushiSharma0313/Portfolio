@@ -7,11 +7,11 @@
 
 /* Body styles */
 body {
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: Arial, sans-serif; /* Changed font for better readability */
     background-color: #e0e0e0; /* Light gray background */
     color: #333; /* Dark text for readability */
     line-height: 1.6;
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 /* Dark mode */
@@ -25,18 +25,27 @@ header {
     background-color: #70c2a7; /* Light teal header background */
     padding: 10px 0;
     text-align: center;
-    position: relative; /* Ensure header is not fixed */
+    position: fixed; /* Fixed header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is on top */
 }
 
 /* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 10px;
 }
 
@@ -54,8 +63,8 @@ nav ul li a:hover {
 
 /* Section styles */
 section {
-    padding: 10px; /* Decrease padding */
-    margin: 10px auto; /* Decrease margin */
+    padding: 20px; /* Increased padding for readability */
+    margin: 70px auto; /* Margin adjusted to account for fixed header */
     max-width: 900px;
     background-color: #fff; /* White background */
     border-radius: 8px;
@@ -280,7 +289,7 @@ body.dark-mode section {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
