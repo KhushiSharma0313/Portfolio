@@ -1,4 +1,4 @@
-/* 2D Game-Like Look */
+/* Base Styles */
 body {
     font-family: 'Press Start 2P', cursive; /* Retro game font */
     background-color: #87ceeb; /* Default day background */
@@ -19,6 +19,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -187,4 +188,47 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif; /* More readable font for mobile */
+    }
+
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .profile-pic {
+        width: 100px;
+    }
+
+    .experience-timeline {
+        padding: 0;
+    }
+
+    .experience-item .experience-content {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+
+    .experience-item:nth-child(even) .experience-content::before,
+    .experience-item:nth-child(odd) .experience-content::before {
+        display: none;
+    }
+
+    .experience-item::after {
+        left: calc(50% - 3px);
+    }
 }
