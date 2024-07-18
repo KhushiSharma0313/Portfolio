@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const ctx = document.getElementById('skillsChart').getContext('2d');
 
@@ -53,6 +51,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+    // Function to show skill description in modal
+    function showSkillDescription(skillName) {
+        const modal = document.getElementById('skillModal');
+        const skillTitle = document.getElementById('skillTitle');
+        const skillDescription = document.getElementById('skillDescription');
+        
+        skillTitle.textContent = skillName;
+        skillDescription.textContent = skillDescriptions[skillName];
+
+        modal.style.display = 'block';
+    }
+
+    // Get the modal
+    const modal = document.getElementById('skillModal');
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName('close')[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
     // Function to add a skill
     window.addSkill = function() {
         const skillName = document.getElementById('skillName').value;
@@ -94,34 +122,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         skillsChart.data = initialData;
         skillsChart.update();
     };
-
-    // Function to show skill description in modal
-    function showSkillDescription(skillName) {
-        const modal = document.getElementById('skillModal');
-        const skillTitle = document.getElementById('skillTitle');
-        const skillDescription = document.getElementById('skillDescription');
-        
-        skillTitle.textContent = skillName;
-        skillDescription.textContent = skillDescriptions[skillName];
-
-        modal.style.display = 'block';
-    }
-
-    // Get the modal
-    const modal = document.getElementById('skillModal');
-
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName('close')[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
 });
