@@ -96,9 +96,27 @@
 <section id="skills">
     <h2>Skills</h2>
     <div class="chart-container">
-        <canvas id="skillsChart"></canvas>
+        <canvas id="skillsChart" width="400" height="400"></canvas>
+    </div>
+    <div class="chart-controls">
+        <input type="text" id="skillName" placeholder="Skill Name">
+        <input type="number" id="skillValue" placeholder="Skill Proficiency" min="0" max="100">
+        <button onclick="addSkill()">Add Skill</button>
+        <button onclick="removeSkill()">Remove Skill</button>
+        <button onclick="updateSkill()">Update Skill</button>
+        <button onclick="resetChart()">Reset Chart</button>
     </div>
 </section>
+
+<!-- Modal for Skill Descriptions -->
+<div id="skillModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="skillTitle"></h3>
+        <p id="skillDescription"></p>
+    </div>
+</div>
+
 
 
     <section id="projects">
