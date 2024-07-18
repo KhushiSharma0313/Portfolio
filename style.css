@@ -5,9 +5,12 @@
     box-sizing: border-box;
 }
 
+/* Import VT323 font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 /* Body styles */
 body {
-    font-family: 'Press Start 2P', cursive; /* Pixel art font for a retro game feel */
+    font-family: 'VT323', monospace; /* Readable retro font */
     background: url('https://example.com/your-game-background.png') repeat; /* Game-themed background image */
     color: #333;
     line-height: 1.6;
