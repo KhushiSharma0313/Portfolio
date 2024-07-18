@@ -53,59 +53,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Function to add a skill
-    window.addSkill = function() {
-        const skillName = document.getElementById('skillName').value;
-        const skillValue = document.getElementById('skillValue').value;
 
-        if(skillName && skillValue) {
-            skillsChart.data.labels.push(skillName);
-            skillsChart.data.datasets[0].data.push(skillValue);
-            skillsChart.update();
-        }
-    };
-
-    // Function to remove a skill
-    window.removeSkill = function() {
-        const skillName = document.getElementById('skillName').value;
-
-        const index = skillsChart.data.labels.indexOf(skillName);
-        if (index > -1) {
-            skillsChart.data.labels.splice(index, 1);
-            skillsChart.data.datasets[0].data.splice(index, 1);
-            skillsChart.update();
-        }
-    };
-
-    // Function to update a skill
-    window.updateSkill = function() {
-        const skillName = document.getElementById('skillName').value;
-        const skillValue = document.getElementById('skillValue').value;
-
-        const index = skillsChart.data.labels.indexOf(skillName);
-        if (index > -1) {
-            skillsChart.data.datasets[0].data[index] = skillValue;
-            skillsChart.update();
-        }
-    };
-
-    // Function to reset the chart
-    window.resetChart = function() {
-        skillsChart.data = initialData;
-        skillsChart.update();
-    };
-
-    // Function to show skill description in modal
-    function showSkillDescription(skillName) {
-        const modal = document.getElementById('skillModal');
-        const skillTitle = document.getElementById('skillTitle');
-        const skillDescription = document.getElementById('skillDescription');
-        
-        skillTitle.textContent = skillName;
-        skillDescription.textContent = skillDescriptions[skillName];
-
-        modal.style.display = 'block';
-    }
 
     // Get the modal
     const modal = document.getElementById('skillModal');
@@ -124,29 +72,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
             modal.style.display = 'none';
         }
     }
-});
-
-// Theme Toggle
-const themeToggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-
-themeToggleButton.addEventListener('click', () => {
-    if (body.classList.contains('day-theme')) {
-        body.classList.remove('day-theme');
-        body.classList.add('night-theme');
-    } else {
-        body.classList.remove('night-theme');
-        body.classList.add('day-theme');
-    }
-});
-
-// Popup Descriptions for Skills
-const skills = document.querySelectorAll('.skill-item');
-
-skills.forEach(skill => {
-    skill.addEventListener('click', () => {
-        const description = skill.querySelector('.description');
-        description.style.display = description.style.display === 'none' ? 'block' : 'none';
-    });
 });
 
