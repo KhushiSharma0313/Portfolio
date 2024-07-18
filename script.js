@@ -8,13 +8,13 @@ var data = {
         label: 'Skill Level',
         data: [90, 85, 80, 85, 75, 70, 65],
         backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 99, 132, 0.2)'
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
         ],
         borderColor: [
             'rgba(255, 99, 132, 1)',
@@ -31,30 +31,19 @@ var data = {
 
 // Configuration options
 var options = {
-    indexAxis: 'y', // Changed to y for bar chart
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
-        y: {
-            beginAtZero: true,
-            max: 100
-        },
-        x: {
-            grid: {
-                display: false
-            }
-        }
-    },
     plugins: {
         legend: {
-            display: false
+            display: true,
+            position: 'bottom'
         }
     }
 };
 
 // Create the chart
 var skillsChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: data,
     options: options
 });
