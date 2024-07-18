@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Theme Toggle Button Styles */
 .theme-toggle {
     position: relative;
@@ -42,7 +43,6 @@
 #theme-switch:checked + .toggle-label:before {
     transform: translateX(20px); /* Toggle button position */
 }
-
 
 /* Body styles */
 body {
@@ -87,7 +87,7 @@ nav ul li a:hover {
 /* Section styles */
 section {
     padding: 20px;
-    margin: 20px auto;
+    margin: 10px auto; /* Adjusted margin */
     max-width: 900px;
     background-color: #fff; /* White background */
     border-radius: 8px;
@@ -155,7 +155,7 @@ section {
     background-color: #f0f0f0; /* Light gray experience item background */
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+    margin: 10px 0; /* Adjusted margin */
     padding: 20px;
 }
 
@@ -200,6 +200,7 @@ section {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     position: relative;
+    margin: 10px; /* Adjusted margin */
 }
 
 .project-card:hover {
