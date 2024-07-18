@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Chart.js initialization
     const ctx = document.getElementById('skillsChart').getContext('2d');
-
     const skillDescriptions = {
         'Programming Languages': 'Proficiency in Python, Java, JavaScript, HTML, CSS, React, PHP, Node.js, C, and C++.',
         'Web Development': 'Experience in designing and developing responsive websites using HTML, CSS, JavaScript, and React.js.',
@@ -74,25 +74,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         modal.style.display = 'block';
     }
 
-    // Get the modal
+    // Get the modal and close button
     const modal = document.getElementById('skillModal');
-
-    // Get the <span> element that closes the modal
     const span = document.getElementsByClassName('close')[0];
 
-    // When the user clicks on <span> (x), close the modal
+    // Close the modal when the close button is clicked
     span.onclick = function() {
         modal.style.display = 'none';
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Close the modal when clicking outside the modal
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
     }
 
-    // Function to toggle light/dark mode
+    // Toggle light/dark mode functionality
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     if (toggleSwitch) {
         toggleSwitch.addEventListener('change', switchTheme, false);
@@ -100,21 +98,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function switchTheme(e) {
         if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
+            document.body.classList.remove('day-theme');
+            document.body.classList.add('night-theme');
             localStorage.setItem('theme', 'dark');
         } else {
-            document.documentElement.setAttribute('data-theme', 'light');
+            document.body.classList.remove('night-theme');
+            document.body.classList.add('day-theme');
             localStorage.setItem('theme', 'light');
         }
     }
 
     // Check local storage for theme preference
     const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
+    if (currentTheme === 'dark') {
+        document.body.classList.remove('day-theme');
+        document.body.classList.add('night-theme');
+        toggleSwitch.checked = true;
+    } else {
+        document.body.classList.remove('night-theme');
+        document.body.classList.add('day-theme');
     }
 });
