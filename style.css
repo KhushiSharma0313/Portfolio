@@ -5,45 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Theme Toggle Button Styles */
-.theme-toggle {
-    position: relative;
-    margin-left: auto;
-    margin-right: 20px; /* Adjust as needed */
-    display: flex;
-    align-items: center;
-}
-
-.toggle-label {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.toggle-label:before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: white;
-    top: 2px;
-    left: 2px;
-    transition: 0.3s;
-}
-
-#theme-switch:checked + .toggle-label {
-    background-color: #2196F3; /* Toggle button active color */
-}
-
-#theme-switch:checked + .toggle-label:before {
-    transform: translateX(20px); /* Toggle button position */
-}
-
 /* Body styles */
 body {
     font-family: 'Press Start 2P', sans-serif;
@@ -87,7 +48,7 @@ nav ul li a:hover {
 /* Section styles */
 section {
     padding: 20px;
-    margin: 10px auto; /* Adjusted margin */
+    margin: 20px auto;
     max-width: 900px;
     background-color: #fff; /* White background */
     border-radius: 8px;
@@ -155,7 +116,7 @@ section {
     background-color: #f0f0f0; /* Light gray experience item background */
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    margin: 10px 0; /* Adjusted margin */
+    margin: 20px 0;
     padding: 20px;
 }
 
@@ -200,7 +161,6 @@ section {
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
     position: relative;
-    margin: 10px; /* Adjusted margin */
 }
 
 .project-card:hover {
