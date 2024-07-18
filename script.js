@@ -37,6 +37,11 @@ var options = {
         y: {
             beginAtZero: true,
             max: 100
+        },
+        x: {
+            grid: {
+                display: false
+            }
         }
     },
     plugins: {
