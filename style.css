@@ -88,7 +88,6 @@ section {
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px; /* Improved margin */
 }
 
 section:hover {
@@ -345,6 +344,22 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    section {
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .skill-bar-progress {
+        height: 8px; /* Adjusted height for smaller screens */
+    }
+
+    .skill-bar-title {
+        font-size: 20px; /* Reduced font size for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
     header {
         padding: 15px 0;
@@ -352,58 +367,71 @@ a:hover {
 
     header nav ul li {
         display: block;
+        margin-right: 0;
         margin-bottom: 10px;
+    }
+
+    header nav ul li:last-child {
+        margin-bottom: 0;
     }
 
     header nav ul li a {
         font-size: 18px;
     }
 
-    section {
-        padding: 40px 20px;
-        margin-bottom: 40px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
     .profile-pic {
-        width: 150px;
+        width: 150px; /* Reduced size for smaller screens */
         height: 150px;
     }
 
+    .experience-item::before {
+        left: 0; /* Adjusted position for smaller screens */
+        transform: translateX(0);
+    }
+
     .experience-content {
-        margin-left: 20px;
+        margin-left: 0; /* Adjusted margin for smaller screens */
+        padding-left: 0;
     }
 
     .skill-bar-title {
-        font-size: 20px;
+        font-size: 18px; /* Further reduced font size for smaller screens */
     }
 
-    .project-card {
-        padding: 20px;
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column layout for projects on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 10px 0;
     }
 
-    .project-info h3 {
-        font-size: 20px;
+    .button {
+        font-size: 14px; /* Reduced font size for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 36px; /* Further reduced font size for smaller screens */
     }
 
-    .contact-form {
-        padding: 30px;
+    h2 {
+        font-size: 30px; /* Further reduced font size for smaller screens */
     }
 
-    .contact-form button {
-        font-size: 16px;
+    h3 {
+        font-size: 24px; /* Further reduced font size for smaller screens */
+    }
+
+    p {
+        font-size: 16px; /* Reduced font size for smaller screens */
+    }
+
+    .profile-pic {
+        width: 120px; /* Further reduced size for smaller screens */
+        height: 120px;
     }
 }
