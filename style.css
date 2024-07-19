@@ -1,6 +1,4 @@
-/* Existing CSS (unchanged parts) */
 
-/* Reset margins and paddings */
 * {
     margin: 0;
     padding: 0;
@@ -98,12 +96,28 @@ body.dark-mode section {
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 200px; /* Increased size for desktop view */
+    height: 200px; /* Increased size for desktop view */
     border-radius: 50%;
     border: 5px solid #4caf50; /* Green border */
     margin-bottom: 15px;
 }
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 150px; /* Increased size for mobile view */
+        height: 150px; /* Increased size for mobile view */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 120px; /* Adjust size for very small screens if needed */
+        height: 120px; /* Adjust size for very small screens if needed */
+    }
+}
+
 
 .button {
     display: inline-block;
