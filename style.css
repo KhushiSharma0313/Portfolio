@@ -111,12 +111,6 @@ body.dark-mode section {
     }
 }
 
-@media (max-width: 480px) {
-    .profile-pic {
-        width: 120px; /* Adjust size for very small screens if needed */
-        height: 120px; /* Adjust size for very small screens if needed */
-    }
-}
 
 
 .button {
