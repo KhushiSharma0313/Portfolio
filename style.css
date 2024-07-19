@@ -40,7 +40,6 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 nav ul {
@@ -48,12 +47,10 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -63,7 +60,6 @@ nav ul li a {
     background: #333; /* Dark button background */
     border: 3px solid #fff; /* White border for a game-like effect */
     transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -90,23 +86,30 @@ body.dark-mode section {
     color: #fff;
 }
 
+/* Profile Picture Container and styles */
+.profile-pic-container {
+    text-align: center; /* Center profile picture */
+    width: 100%; /* Full width for container */
+}
+
+.profile-pic {
+    width: 150px; /* Set width for larger screens */
+    height: 150px; /* Set height for larger screens */
+    border-radius: 50%;
+    border: 5px solid #4caf50; /* Green border */
+    margin-bottom: 15px;
+    object-fit: cover; /* Ensure image covers container */
+}
+
 /* About section styles */
 #about {
     text-align: center;
 }
 
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #4caf50; /* Green border */
-    margin-bottom: 15px;
-}
-
-.button {
+/* Buttons and Social Buttons */
+.button,
+.social-button {
     display: inline-block;
-    background-color: #4caf50; /* Game-inspired button background */
-    color: white;
     padding: 12px 25px;
     text-align: center;
     text-decoration: none;
@@ -116,23 +119,20 @@ body.dark-mode section {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+.button {
+    background-color: #4caf50; /* Game-inspired button background */
+    color: white;
+}
+
 .button:hover {
     background-color: #45a049; /* Slightly darker green */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .social-button {
-    display: inline-block;
     background-color: #3b5998;
     color: white;
-    padding: 12px 25px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 15px;
     margin-left: 10px;
-    border: 3px solid #333;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 .social-button:hover {
@@ -357,32 +357,31 @@ body.dark-mode section {
 
     nav ul li a {
         display: block;
-        padding: 15px;
-        font-size: 16px;
+        padding: 12px;
+        margin: 5px 0;
     }
 
-    .social-button {
-        display: block;
-        margin-top: 10px;
-        margin-left: 0;
+    header {
+        padding: 10px 0;
     }
 
-    .projects-container {
-        grid-template-columns: 1fr;
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
     }
 
-    .experience-item,
+    .experience-item {
+        width: 90%;
+        margin: 10px 0;
+    }
+
     .project-card {
         width: 90%;
+        margin: 10px 0;
     }
 
-    .button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .social-button {
-        padding: 10px 20px;
-        font-size: 14px;
+    .chart-container {
+        width: 90%;
     }
 }
