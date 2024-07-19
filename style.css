@@ -26,7 +26,7 @@ body.dark-mode {
 /* Header styles */
 header {
     background-color: #4caf50; /* Bright green header */
-    padding: 15px 10px;
+    padding: 15px 0;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -40,7 +40,6 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    position: relative;
 }
 
 nav ul {
@@ -48,8 +47,6 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row; /* Default to row on larger screens */
-    align-items: center;
 }
 
 nav ul li {
@@ -63,99 +60,12 @@ nav ul li a {
     background: #333; /* Dark button background */
     border: 3px solid #fff; /* White border for a game-like effect */
     transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
 }
 
 nav ul li a:hover {
     background-color: #555;
     transform: scale(1.1); /* Slightly enlarge on hover */
     border-color: #4caf50; /* Highlight border color */
-}
-
-/* Mobile menu styles */
-.menu-toggle {
-    display: none; /* Hidden by default */
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    background: #333;
-    border: 3px solid #fff;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.menu-toggle:hover {
-    background-color: #555;
-    transform: scale(1.1);
-    border-color: #4caf50;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Media queries for mobile view */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide the navigation links by default */
-        flex-direction: column; /* Stack links vertically */
-        width: 100%;
-        background-color: #4caf50;
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        border: 3px solid #fff; /* White border */
-    }
-
-    nav ul.active {
-        display: flex; /* Show the menu when active */
-    }
-
-    nav ul li {
-        margin: 0;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 12px;
-        border: none;
-    }
-
-    .menu-toggle {
-        display: block; /* Show the menu toggle on mobile */
-    }
-}
-
-/* Profile Picture Container and styles */
-.profile-pic-container {
-    text-align: center; /* Center profile picture */
-    width: 100%; /* Full width for container */
-    margin-top: 60px; /* Ensure profile pic is not hidden behind fixed header */
-}
-
-.profile-pic {
-    width: 150px; /* Set width for larger screens */
-    height: 150px; /* Set height for larger screens */
-    border-radius: 50%;
-    border: 5px solid #4caf50; /* Green border */
-    margin-bottom: 15px;
-    object-fit: cover; /* Ensure image covers container */
-}
-
-/* Mobile styles for profile picture */
-@media (max-width: 768px) {
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
-    }
-
-    .profile-pic-container {
-        margin-top: 80px; /* Adjust margin for mobile view */
-    }
 }
 
 /* Section styles */
@@ -181,10 +91,18 @@ body.dark-mode section {
     text-align: center;
 }
 
-/* Buttons and Social Buttons */
-.button,
-.social-button {
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #4caf50; /* Green border */
+    margin-bottom: 15px;
+}
+
+.button {
     display: inline-block;
+    background-color: #4caf50; /* Game-inspired button background */
+    color: white;
     padding: 12px 25px;
     text-align: center;
     text-decoration: none;
@@ -194,20 +112,23 @@ body.dark-mode section {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.button {
-    background-color: #4caf50; /* Game-inspired button background */
-    color: white;
-}
-
 .button:hover {
     background-color: #45a049; /* Slightly darker green */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
 .social-button {
+    display: inline-block;
     background-color: #3b5998;
     color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
     margin-left: 10px;
+    border: 3px solid #333;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .social-button:hover {
@@ -350,47 +271,71 @@ body.dark-mode section {
     text-align: center;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border: 3px solid #333; /* Border to match the theme */
+#contact ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+#contact ul li {
     margin-bottom: 15px;
 }
 
-.contact-form input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
+#contact ul li a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s;
+    border: 2px dashed #007BFF; /* Dotted border for links */
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.contact-form input[type="submit"]:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+#contact ul li a:hover {
+    color: #0056b3;
+    border-color: #0056b3; /* Change border color on hover */
 }
 
-/* Footer styles */
-footer {
+/* Skills section styles */
+#skills {
     text-align: center;
-    padding: 10px;
-    background-color: #4caf50; /* Header color to match */
-    color: #fff;
-    border-top: 5px solid #333;
 }
 
-footer p {
-    margin: 0;
+.chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #4caf50; /* Border to match the theme */
+    width: 80%;
+    border-radius: 12px;
+}
+
+.close {
+    color: #4caf50;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
 }
