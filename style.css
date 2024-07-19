@@ -106,8 +106,8 @@ body.dark-mode section {
 /* Media queries for mobile responsiveness */
 @media (max-width: 768px) {
     .profile-pic {
-        width: 150px; /* Increased size for mobile view */
-        height: 150px; /* Increased size for mobile view */
+        width: 250px; /* Increased size for mobile view */
+        height: 250px; /* Increased size for mobile view */
     }
 }
 
