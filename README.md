@@ -10,7 +10,9 @@ Welcome to my personal portfolio! This website showcases my journey as a Compute
 
 ### Screenshots 
 ![image](https://github.com/user-attachments/assets/43423284-0fdb-486d-a702-b517b4e13800)
+
 ![image](https://github.com/user-attachments/assets/4079783b-a0df-430b-a53d-6311a188c4b0)
+
 ![image](https://github.com/user-attachments/assets/d5ecf864-22f5-4b09-8b08-184985f4bf02)
 
 
